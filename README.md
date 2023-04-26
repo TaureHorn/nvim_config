@@ -8,9 +8,15 @@ Mostly just posting it here to have a nice backup option :)
 
 ## Installation
 Install this repo into local config
-```git clone https://github.com/TaureHorn/nvim_config/ ~/.config/nvim```
+```
+git clone https://github.com/TaureHorn/nvim_config/ ~/.config/nvim
+```
 
-Install [Packer.nvim](https://github.com/wbthomason/packer.nvim) using the provider one liner
+Install [Packer.nvim](https://github.com/wbthomason/packer.nvim) using the provider one liner which should look something like this;
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ ```
 
 Sync and install plugins with packer in neovim. First open the packer file in neovim.
 ```

@@ -8,13 +8,12 @@ Mostly just posting it here to have a nice backup option :)
 
 ## Installation
 Install this repo into local config
-`git clone https://github.com/TaureHorn/nvim_config/ ~/.config/nvim`
+```git clone https://github.com/TaureHorn/nvim_config/ ~/.config/nvim```
 
 Install [Packer.nvim](https://github.com/wbthomason/packer.nvim) using the provider one liner
 
-Sync and install plugins with packer in neovim
+Sync and install plugins with packer in neovim. First open the packer file in neovim.
 ```
-cd ~/.config/nvim/lua/silence/packer.lua
-nvim packer.lua
+nvim ~/.config/nvim/lua/silence/packer.lua
 ```
-With packer.lua open in neovim `:so` and then `:PackerSync`
+With packer.lua open in neovim `:so` and then `:PackerSync` and you're done!

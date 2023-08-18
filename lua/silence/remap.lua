@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>fm", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>fm", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ss", vim.cmd.w)
 
 -- Window/split navigation
@@ -23,3 +23,9 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- Fugitive show git status
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
+-- Formatting 
+vim.keymap.set("n", "<leader>ff", vim.cmd.CocCommand)
+vim.keymap.set("n", "<leader>=", vim.cmd.CocCommand)
+
+ -- INSERT MODE REMAPS
+vim.keymap.set("i", "<C-b>", "<Bslash>")

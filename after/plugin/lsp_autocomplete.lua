@@ -12,10 +12,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function keymap()
     print(" ** LSP keymap has attached to a buffer with a running LSP server ** ")
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })           -- hover info
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })     -- jump to definition
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = 0 })  -- rename item across files
-    vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { buffer = 0 }) -- rename item across files
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })          -- hover info
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })    -- jump to definition
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = 0 }) -- rename item across files
 
     -- DIAGNOSTICS
     vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })         -- jump to next diagnostic flag
@@ -32,6 +31,19 @@ require("mason-lspconfig").setup_handlers {
             root_dir = vim.fs.dirname,
         }
     end,
+
+    ["lua_ls"] = function()
+        local lspconfig = require("lspconfig")
+        lspconfig.lua_ls.setup {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+        }
+    end
 }
 
 -- AUTOCOMPLETE

@@ -11,7 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -23,5 +23,3 @@ vim.opt.scrolloff = 33
 vim.opt.updatetime = 50
 
 vim.opt.incsearch = true
-
-

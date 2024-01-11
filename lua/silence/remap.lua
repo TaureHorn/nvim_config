@@ -1,5 +1,6 @@
 vim.g.mapleader = " " -- set leader key to spacebar
 vim.keymap.set("n", "<leader>ss", vim.cmd.w) -- save file
+vim.keymap.set("n", "<leader>so", ":so %<CR>") -- source file
 vim.keymap.set("n", "<C-C>", '"+y') -- OS clipboard copy
 vim.keymap.set("n", "<C-U>", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") -- select current word for replacement
 vim.keymap.set("n", "m", "%") -- switch cursor between open and close bracket pairs

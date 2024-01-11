@@ -1,10 +1,10 @@
 local normal = {
-    bg = { attribute = "bg", highlight = "TabLineSel"},
-    fg = { attribute = "fg", highlight = "TabLineSel"},
+    bg = { attribute = "bg", highlight = "TabLineSel" },
+    fg = { attribute = "fg", highlight = "TabLineSel" },
 }
 local inverted = {
-    bg = { attribute = "bg", highlight = "PmenuSel"},
-    fg = { attribute = "fg", highlight = "PmenuSel"},
+    bg = { attribute = "bg", highlight = "PmenuSel" },
+    fg = { attribute = "fg", highlight = "PmenuSel" },
 }
 
 require("bufferline").setup({
@@ -28,13 +28,13 @@ require("bufferline").setup({
 
         -- active tab
         buffer_selected = {
-            bg = { attribute = "bg", highlight = "PmenuSel"},
-            fg = { attribute = "fg", highlight = "PmenuSel"},
+            bg = { attribute = "bg", highlight = "PmenuSel" },
+            fg = { attribute = "fg", highlight = "PmenuSel" },
             italic = false,
         },
         numbers_selected = {
-            bg = { attribute = "bg", highlight = "PmenuSel"},
-            fg = { attribute = "fg", highlight = "PmenuSel"},
+            bg = { attribute = "bg", highlight = "PmenuSel" },
+            fg = { attribute = "fg", highlight = "PmenuSel" },
             italic = false,
         },
         modified_selected = inverted,

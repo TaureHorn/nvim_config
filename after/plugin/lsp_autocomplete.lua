@@ -35,6 +35,9 @@ require("mason-lspconfig").setup_handlers {
     ["lua_ls"] = function()
         local lspconfig = require("lspconfig")
         lspconfig.lua_ls.setup {
+            capabilities = capabilities,
+            on_attach = keymap,
+            root_dir = vim.fs.dirname,
             settings = {
                 Lua = {
                     diagnostics = {

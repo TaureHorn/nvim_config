@@ -23,3 +23,7 @@ vim.opt.scrolloff = 33
 vim.opt.updatetime = 50
 
 vim.opt.incsearch = true
+
+-- nvim-tree says not to netrw :((
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrw_Plugin = 1

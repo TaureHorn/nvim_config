@@ -29,15 +29,9 @@ require("noice").setup({
                 padding = { 0, 0 },
             },
             win_options = {
-                winhighlight = { Normal = "Normal", FloatBorder = "TabLineSel" },
+                winhighlight = { Normal = "Normal", FloatBorder = "@text.todo" },
             },
         },
     },
-})
-
-require("notify").setup({
-    background_colour = '#000000',
-    render = "minimal",
-    timeout = 3000,
-    top_down = false,
+    notify = { enabled = false, }
 })

@@ -9,15 +9,15 @@ return require('packer').startup(function(use)
     use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" } -- zenbones suite of colorschemes
 
     --  DETAILS
-    use "voldikss/vim-floaterm"                                                                         -- Floating terminal windows
-    use "folke/zen-mode.nvim"                                                                           -- Zen Mode: centre file with no distractions
-    use "lukas-reineke/indent-blankline.nvim"                                                           -- Adds lines to show indent levels
+    use "voldikss/vim-floaterm"                                                                                                   -- Floating terminal windows
+    use "folke/zen-mode.nvim"                                                                                                     -- Zen Mode: centre file with no distractions
+    use "lukas-reineke/indent-blankline.nvim"                                                                                     -- Adds lines to show indent levels
     use 'goolord/alpha-nvim'
-    use { "nvim-tree/nvim-web-devicons", config = function() require("nvim-web-devicons").setup() end } -- good icons in nvim-tree
-    use { 'yaocccc/nvim-foldsign', event = 'CursorHold', config = 'require("nvim-foldsign").setup()' }  -- adds sign in margin of a fold
-    use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }       -- Statusline
+    use { "nvim-tree/nvim-web-devicons", config = function() require("nvim-web-devicons").setup() end }                           -- good icons in nvim-tree
+    use { 'yaocccc/nvim-foldsign', event = 'CursorHold', config = 'require("nvim-foldsign").setup()' }                            -- adds sign in margin of a fold
+    use { 'nvim-lualine/lualine.nvim', requires = { "meuter/lualine-so-fancy.nvim", 'nvim-tree/nvim-web-devicons', opt = true } } -- Statusline
     -- Noice adds a bunch of visual flavour e.g. centred cmd line and message popups
-    use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } })
+    use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", } })
 
     --  /////// FUNCTIONAL PLUGINS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     use "mbbill/undotree"                                                                               -- tracks file changes and allows to navigate and restore from history

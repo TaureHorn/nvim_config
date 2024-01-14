@@ -3,6 +3,7 @@ CP = "cyberpunk"
 SH = "silverhand"
 Bones = "voidbones"
 Matrix = "thematrix"
+Rose = "rosebones"
 
 -- defaults
 local DEFAULT_COLORSCHEME = CP

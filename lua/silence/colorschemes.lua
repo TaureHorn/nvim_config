@@ -1,10 +1,11 @@
 -- colorschemes
 CP = "cyberpunk"
+SH = "silverhand"
 Bones = "voidbones"
 Matrix = "thematrix"
 
 -- defaults
-local DEFAULT_COLORSCHEME = Matrix
+local DEFAULT_COLORSCHEME = CP
 local DEFAULT_TRANSPARENCY = true
 
 local function schemeSetter(input)

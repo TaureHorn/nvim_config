@@ -1,6 +1,6 @@
 require("mason").setup({
     ui = {
-        border = "rounded",
+        border = "single",
         height = 0.6,
         width = 0.33,
     }
@@ -51,25 +51,25 @@ require("mason-lspconfig").setup_handlers {
 
 -- AUTOCOMPLETE
 local cmp = require 'cmp'
+local ui = {
+    border = "none",
+    winhighlight = "Normal:Statusline"
+}
 cmp.setup({
     snippet = {
         expand = function(args) require('luasnip').lsp_expand(args.body) end },
-
     window = {
-        completion = cmp.config.window.bordered("single"),
-        documentation = cmp.config.window.bordered("single"),
+        completion = ui,
+        documentation = ui
     },
-
     experimental = {
         ghost_text = { hl_group = "@comment" },
     },
-
     mapping = cmp.mapping.preset.insert({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     }),
-
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' }, { name = 'luasnip' } }, { { name = 'buffer' }, { name = 'path'},
+        { name = 'nvim_lsp' }, { name = 'luasnip' } }, { { name = 'buffer' }, { name = 'path' },
     })
 })

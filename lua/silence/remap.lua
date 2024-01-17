@@ -1,10 +1,13 @@
 vim.g.mapleader = " "
+
 vim.keymap.set("n", "<leader>so", ":so %<CR>", { desc = "source buffer" })
-vim.keymap.set("n", "<C-y>", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-    { desc = "rename word under cursor" })
 vim.keymap.set("n", "m", "%", { desc = "navigate cursor to paired bracket" })
 vim.keymap.set("n", "<leader>z", "zi", { desc = "toggle fold under cursor" })
-
+vim.keymap.set("n", "<leader>p", "jPk", { desc = "paste below w/o moving cursor" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "keep cursor in middle when moving through search results" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "keep cursor in middle when moving through search results" })
+vim.keymap.set("n", "<C-y>", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+{ desc = "rename word under cursor" })
 
 vim.keymap.set("n", "<leader>ss", vim.cmd.w, { desc = "save buffer" })
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "format buffer" })
@@ -18,8 +21,6 @@ vim.keymap.set("n", "<leader>qh", function()
     vim.cmd("q")
 end, { desc = "jump down vertical split and quit" })
 
-vim.keymap.set("n", "n", "nzzzv", { desc = "keep cursor in middle when moving through search results" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "keep cursor in middle when moving through search results" })
 
 vim.keymap.set("n", "<leader>#", vim.cmd.FloatermNew, { desc = "open float term window" })
 

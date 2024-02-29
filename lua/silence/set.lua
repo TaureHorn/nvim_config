@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+vim.cmd("set mouse=")
 vim.cmd("set cursorline")
 vim.opt.signcolumn = "yes"
 vim.opt.nu = true

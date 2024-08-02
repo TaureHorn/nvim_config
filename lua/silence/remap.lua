@@ -35,15 +35,15 @@ vim.keymap.set("n", "<leader>gr", "<cmd>bufdo e<CR>", { desc = "reload buffers -
 -- Window/split navigation
 vim.keymap.set("n", "<leader><Tab>", vim.cmd.vsp, { desc = "vertical split" })
 vim.keymap.set("n", "<leader><CR>", vim.cmd.sp, { desc = "split" })
-vim.keymap.set("n", "<A-j>", "<cmd>wincmd j<CR>", { desc = "move to split down" })
-vim.keymap.set("n", "<A-k>", "<cmd>wincmd k<CR>", { desc = "move to split up" })
-vim.keymap.set("n", "<A-h>", "<cmd>wincmd h<CR>", { desc = "move to split left" })
-vim.keymap.set("n", "<A-l>", "<cmd>wincmd l<CR>", { desc = "move to split rigth" })
+vim.keymap.set("n", "<leader>j", "<cmd>wincmd j<CR>", { desc = "move to split down" })
+vim.keymap.set("n", "<leader>k", "<cmd>wincmd k<CR>", { desc = "move to split up" })
+vim.keymap.set("n", "<leader>h", "<cmd>wincmd h<CR>", { desc = "move to split left" })
+vim.keymap.set("n", "<leader>l", "<cmd>wincmd l<CR>", { desc = "move to split rigth" })
 
-vim.keymap.set("n", "<A-w>", "<cmd>res +1<CR>", { desc = "increase window height by 1" })
-vim.keymap.set("n", "<A-s>", "<cmd>res -1<CR>", { desc = "decrease window height by 1" })
-vim.keymap.set("n", "<A-d>", "<cmd>vertical res +1<CR>", { desc = "increase window width by 1" })
-vim.keymap.set("n", "<A-a>", "<cmd>vertical res -1<CR>", { desc = "decrease window witdth by 1" })
+vim.keymap.set("n", "<A-k>", "<cmd>res +1<CR>", { desc = "increase window height by 1" })
+vim.keymap.set("n", "<A-j>", "<cmd>res -1<CR>", { desc = "decrease window height by 1" })
+vim.keymap.set("n", "<A-l>", "<cmd>vertical res +1<CR>", { desc = "increase window width by 1" })
+vim.keymap.set("n", "<A-h>", "<cmd>vertical res -1<CR>", { desc = "decrease window witdth by 1" })
 
 -- NVIM COMMENT
 vim.keymap.set("n", '<C-l>', ':CommentToggle<CR>', { desc = "toggle comment" })
@@ -55,14 +55,15 @@ vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = "open Telescope file f
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = "open Telescope file grep" })
 vim.keymap.set('n', '<leader>ll', vim.diagnostic.setqflist)
 
--- local harpoon = require("harpoon")
--- for i = 1, 9, 1 do
---     vim.keymap.set("n", "<leader>" .. i, function() harpoon:list():select(i) end, { desc = "open harpoon buffer" .. i })
--- end
+local harpoon = require("harpoon")
+for i = 1, 9, 1 do
+    vim.keymap.set("n", "<leader>" .. i, function() harpoon:list():select(i) end, { desc = "open harpoon buffer" .. i })
+end
 
 -- INSERT MODE REMAPS
-vim.keymap.set("i", "<C-_>", "<Bslash>", { desc = "shortcut for backslash" })
-vim.keymap.set("i", "<C-\\>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
+vim.keymap.set("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
+vim.keymap.set("i", "<c-k>", "()<Esc>i", { desc = "shorcut for a pair of parentheses" })
+vim.keymap.set("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" })
 
 -- VISUAL MODE REMAPS
 vim.keymap.set("v", "<C-C>", '"+y', { desc = "OS clipboard copy" })

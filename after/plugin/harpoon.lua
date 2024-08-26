@@ -23,9 +23,13 @@ local function toggle_telescope(harpoon_files)
     }):find()
 end
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = "Add current buffer to harpoon list" })
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add current buffer to harpoon list" })
 vim.keymap.set("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
     { desc = "Toggle harpoon buffer list" })
-vim.keymap.set("n", "<C-J>", function() harpoon:list():prev() end, { desc = "Goto prev buffer in harpoon list" })
-vim.keymap.set("n", "<C-K>", function() harpoon:list():next() end, { desc = "Goto next buffer in harpoon list" })
 vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open telescope harpoon window" })
+
+vim.keymap.set("n", "<leader>h", function() harpoon:list():select(1) end, { desc = "open harpoon buffer 1" })
+vim.keymap.set("n", "<leader>j", function() harpoon:list():select(2) end, { desc = "open harpoon buffer 2" })
+vim.keymap.set("n", "<leader>k", function() harpoon:list():select(3) end, { desc = "open harpoon buffer 3" })
+vim.keymap.set("n", "<leader>l", function() harpoon:list():select(4) end, { desc = "open harpoon buffer 4" })
+vim.keymap.set("n", "<leader>;", function() harpoon:list():select(5) end, { desc = "open harpoon buffer 5" })

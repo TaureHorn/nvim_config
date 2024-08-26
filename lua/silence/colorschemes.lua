@@ -1,6 +1,7 @@
 -- colorschemes
 CP = "cyberpunk"
 SH = "silverhand"
+EL = "eldritch"
 Bones = "voidbones"
 Matrix = "thematrix"
 Rose = "rosebones"
@@ -14,7 +15,6 @@ local function schemeSetter(input)
     vim.cmd("set background=dark")
     vim.cmd("set termguicolors")
     vim.opt.cursorline = true
-    vim.opt.guicursor = ""
     vim.cmd(scheme)
 end
 
@@ -22,7 +22,7 @@ function Color(inputColor)
     schemeSetter(inputColor)
 end
 
-function TColor(inputColor)
+function Tcolor(inputColor)
     schemeSetter(inputColor)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -30,7 +30,7 @@ end
 
 local function setDefault()
     if DEFAULT_TRANSPARENCY == true then
-        TColor(DEFAULT_COLORSCHEME)
+        Tcolor(DEFAULT_COLORSCHEME)
     elseif DEFAULT_TRANSPARENCY == false then
         Color(DEFAULT_COLORSCHEME)
     else

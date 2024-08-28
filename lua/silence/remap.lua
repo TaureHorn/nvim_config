@@ -7,7 +7,7 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "keep cursor in middle when moving th
 vim.keymap.set("n", "N", "Nzzzv", { desc = "keep cursor in middle when moving through search results" })
 vim.keymap.set("n", "<C-y>", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "rename word under cursor" })
 vim.keymap.set("n", "<leader>'", "bi'<Esc>ea<Esc>'", { desc = "wrap word under cursor in '' " })
-vim.keymap.set("n", "<leader>d", "za", { desc = "toggle fold" })
+vim.keymap.set("n", "<leader>b", "za", { desc = "toggle fold" })
 
 vim.keymap.set("n", "<leader>ss", vim.cmd.w, { desc = "save buffer" })
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "format buffer" })

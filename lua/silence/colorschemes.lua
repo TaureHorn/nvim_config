@@ -14,7 +14,7 @@ local function schemeSetter(input)
     local scheme = "colorscheme " .. input
     vim.cmd("set background=dark")
     vim.cmd("set termguicolors")
-    vim.opt.cursorline = true
+    vim.cmd("set cursorline")
     vim.cmd(scheme)
 end
 

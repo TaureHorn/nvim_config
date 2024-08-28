@@ -32,6 +32,17 @@ require("noice").setup({
                 winhighlight = { Normal = "Normal", FloatBorder = "@text.todo" },
             },
         },
+        vsplit = {
+            size = {
+                width = 50
+            },
+        },
+            },
+    notify = {
+        enabled = false
     },
-    notify = { enabled = false, }
+    messages = {
+        enabled = true,
+        view = 'vsplit'
+    }
 })

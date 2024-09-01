@@ -7,7 +7,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup()
-
+    
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function keymap()
@@ -52,8 +52,8 @@ require("mason-lspconfig").setup_handlers {
 -- AUTOCOMPLETE
 local cmp = require 'cmp'
 local ui = {
-    border = "none",
-    winhighlight = "Normal:Statusline"
+    border = "single",
+    winhighlight = "Normal:Normal"
 }
 cmp.setup({
     snippet = {

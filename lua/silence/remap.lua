@@ -33,6 +33,7 @@ vim.keymap.set("n", "<Left>", "<cmd>wincmd h<CR>", { desc = "move to split left"
 vim.keymap.set("n", "<Down>", "<cmd>wincmd j<CR>", { desc = "move to split down" })
 vim.keymap.set("n", "<Up>", "<cmd>wincmd k<CR>", { desc = "move to split up" })
 vim.keymap.set("n", "<Right>", "<cmd>wincmd l<CR>", { desc = "move to split rigth" })
+--
 vim.keymap.set("n", "<A-Left>", "<cmd>vertical res -20<CR>", { desc = "decrease window witdth by 20" })
 vim.keymap.set("n", "<A-Down>", "<cmd>res -20<CR>", { desc = "decrease window height by 20" })
 vim.keymap.set("n", "<A-Up>", "<cmd>res +20<CR>", { desc = "increase window height by 20" })
@@ -44,15 +45,16 @@ vim.keymap.set("v", '<C-l>', ":'<,'>CommentToggle<CR>", { desc = "toggle comment
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = "open Telescope file finder" })
+vim.keymap.set('n', '<C-P>', builtin.find_files, { desc = "open Telescope file finder" })
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = "open Telescope file grep" })
 vim.keymap.set('n', '<leader>fd', vim.diagnostic.setqflist)
 
 -- INSERT MODE REMAPS
+vim.keymap.set("i", "<C-H>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
 vim.keymap.set("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
 vim.keymap.set("i", "<c-k>", "()<Esc>i", { desc = "shorcut for a pair of parentheses" })
 vim.keymap.set("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" })
-
+vim.keymap.set("i", "<c-q>", "<C-K>", { desc = "shorcut for a pair of square brackets" })
 
 -- VISUAL MODE REMAPS
 vim.keymap.set("v", "<C-C>", '"+y', { desc = "OS clipboard copy" })
@@ -66,3 +68,4 @@ vim.keymap.set("t", "<A-h>", "<C-\\><C-n><C-w>h", { desc = "move to different sp
 vim.keymap.set("t", "<A-j>", "<C-\\><C-n><C-w>j", { desc = "move to different split from terminal" })
 vim.keymap.set("t", "<A-k>", "<C-\\><C-n><C-w>k", { desc = "move to different split from terminal" })
 vim.keymap.set("t", "<A-l>", "<C-\\><C-n><C-w>l", { desc = "move to different split from terminal" })
+

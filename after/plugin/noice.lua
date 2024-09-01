@@ -2,8 +2,8 @@ require("noice").setup({
     views = {
         cmdline_popup = {
             border = {
-                style = "single",
-                padding = { 0, 0 },
+                style = "none",
+                padding = { 1, 0 },
             },
             position = {
                 row = 40,
@@ -12,6 +12,31 @@ require("noice").setup({
             size = {
                 width = 50,
                 height = "auto",
+            },
+            win_options = {
+                cursorline = true
+            },
+        },
+        mini = {
+            align = 'mesage-right',
+            border = {
+                style = "none",
+                padding = { 1, 0 },
+            },
+            position = {
+                row = 0,
+            },
+            reverse = false,
+            size = {
+                width = "auto",
+                height = "auto",
+            },
+            timeout = 10000,
+            win_options = {
+                winhighlight = {
+                    Normal = "@boolean",
+                    FloatBorder = "@boolean"
+                },
             },
         },
         popupmenu = {
@@ -29,20 +54,27 @@ require("noice").setup({
                 padding = { 0, 0 },
             },
             win_options = {
-                winhighlight = { Normal = "Normal", FloatBorder = "@text.todo" },
+                winhighlight = {
+                    Normal = "Pmenu",
+                    FloatBorder = "Pmenu"
+                },
             },
         },
         vsplit = {
             size = {
                 width = 50
             },
+            win_options = {
+                cursorline = false
+            }
         },
-            },
+    },
     notify = {
         enabled = false
     },
     messages = {
         enabled = true,
-        view = 'vsplit'
+        view = 'mini'
     }
 })
+

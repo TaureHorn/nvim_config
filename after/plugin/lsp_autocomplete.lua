@@ -66,8 +66,10 @@ cmp.setup({
         ghost_text = { hl_group = "@comment" },
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+        ['<Left>'] = cmp.mapping.abort(),
+        ['<Esc>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<Right>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' }, { name = 'luasnip' } }, { { name = 'buffer' }, { name = 'path' },

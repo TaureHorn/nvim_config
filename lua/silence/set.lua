@@ -1,4 +1,3 @@
-vim.cmd("set shellcmdflag=-c")
 vim.cmd("set guicursor=n-v-c-i:block")
 vim.cmd("set mouse=")
 vim.opt.signcolumn = "yes"
@@ -48,6 +47,7 @@ vim.cmd("call nvim_create_user_command('Hist', 'NoiceHistory', {})")
 vim.cmd("call nvim_create_user_command('Ts', 'Telescope resume', {})")
 vim.cmd("call nvim_create_user_command('Ft', 'FloatermNew', {})")
 vim.cmd("call nvim_create_user_command('Ls', 'LspInfo', {})")
+
 -- these next two are just kinda gimmicks lol
 vim.cmd("call nvim_create_user_command('Hex', '%!xxd', {})")
 vim.cmd("call nvim_create_user_command('Unhex', '%!xxd -r', {})")

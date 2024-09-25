@@ -13,8 +13,13 @@ require('telescope').setup({
                 ["<C-p>"] = actions.close,
                 ["<Esc>"] = actions.close,
                 ["n"] = actions.move_selection_next,
-                ["N"] = actions.move_selection_previous,
+                ["p"] = actions.move_selection_previous,
             },
+        }
+    },
+    pickers = {
+        colorscheme = {
+            enable_preview = true
         }
     }
 })

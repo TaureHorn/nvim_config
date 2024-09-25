@@ -7,11 +7,11 @@ vim.keymap.set("n", "<C-k>", "{", { desc = "move up by paragraph" })
 
 vim.keymap.set("n", "m", "%", { desc = "navigate cursor to paired bracket" })
 vim.keymap.set("n", "\\", vim.cmd.noh, { desc = "noh to stop highlighting" })
-vim.keymap.set("n", "<>p", "jPk", { desc = "paste below w/o moving cursor" })
+vim.keymap.set("n", "<leader>p", "jPk", { desc = "paste below w/o moving cursor" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "keep cursor in middle when moving through search results" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "keep cursor in middle when moving through search results" })
 vim.keymap.set("n", "<C-y>", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "rename word under cursor" })
-vim.keymap.set("n", "<leader>'", "bi'<Esc>ea<Esc>'", { desc = "wrap word under cursor in '' " })
+vim.keymap.set("n", "<leader>'", "bi'<Esc>ea'<Esc>", { desc = "wrap word under cursor in '' " })
 vim.keymap.set("n", ",", "za", { desc = "toggle fold" })
 
 vim.keymap.set("n", "<leader>ss", vim.cmd.w, { desc = "save buffer" })

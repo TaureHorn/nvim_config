@@ -10,6 +10,8 @@ Rose = "rosebones"
 local DEFAULT_COLORSCHEME = CP
 local DEFAULT_TRANSPARENCY = true
 
+-- TODO
+
 local function schemeSetter(input)
     local scheme = "colorscheme " .. input
     vim.cmd("set background=dark")
@@ -39,3 +41,14 @@ local function setDefault()
 end
 
 setDefault()
+
+function Highlighter()
+    local colorscheme = vim.api.nvim_exec("colorscheme", true)
+    if colorscheme == "cyberpunk" then
+        vim.api.nvim_command("hi @comment.todo guibg=white gui=bold,italic")
+        vim.api.nvim_command("hi Number guifg=#ff8d1f gui=italic")
+    end
+end
+
+Highlighter()
+

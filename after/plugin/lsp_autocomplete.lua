@@ -14,7 +14,7 @@ local function keymap()
     print(" ** LSP keymap has attached to a buffer with a running LSP server ** ")
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })          -- hover info
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })    -- jump to definition
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = 0 }) -- rename item across files
+    vim.cmd("call nvim_create_user_command('Mv', 'lua vim.lsp.buf.rename()', {})")
 
     -- DIAGNOSTICS
     vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })         -- jump to next diagnostic flag

@@ -10,7 +10,7 @@ require("noice").setup({
                 col = "50%",
             },
             size = {
-                width = 50,
+                width = 100,
                 height = "auto",
             },
             win_options = {

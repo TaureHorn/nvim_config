@@ -15,6 +15,7 @@ end
 
 require('nvim-tree').setup({
     on_attach = on_attach,
+    update_cwd = true,
     view = {
         float = {
             enable = true,

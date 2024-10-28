@@ -14,18 +14,11 @@ vim.keymap.set("n", "<C-y>", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Lef
 vim.keymap.set("n", "<leader>'", "bi'<Esc>ea'<Esc>", { desc = "wrap word under cursor in '' " })
 vim.keymap.set("n", ",", "za", { desc = "toggle fold" })
 
-vim.keymap.set("n", "<leader>ss", vim.cmd.w, { desc = "save buffer" })
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "format buffer" })
-vim.keymap.set("n", "<leader>ww", function()
-    vim.lsp.buf.format()
-    vim.cmd("w")
-end, { desc = "format and save buffer" })
 
 vim.keymap.set("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "toggle nvim-tree window" })
 
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
-
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "vim-fugitive Git cmd" })
 
 vim.keymap.set("n", "zz", vim.cmd.ZenMode, { desc = "toggle ZenMode" })
 
@@ -76,4 +69,3 @@ vim.keymap.set("t", "<Left>", "<C-\\><C-n><C-w>h", { desc = "move to different s
 vim.keymap.set("t", "<Down>", "<C-\\><C-n><C-w>j", { desc = "move to different split from terminal" })
 vim.keymap.set("t", "<Up>", "<C-\\><C-n><C-w>k", { desc = "move to different split from terminal" })
 vim.keymap.set("t", "<Right>", "<C-\\><C-n><C-w>l", { desc = "move to different split from terminal" })
-

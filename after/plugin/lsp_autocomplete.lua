@@ -12,8 +12,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function keymap()
     print(" ** LSP keymap has attached to a buffer with a running LSP server ** ")
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })          -- hover info
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })    -- jump to definition
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })       -- hover info
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 }) -- jump to definition
     vim.cmd("call nvim_create_user_command('Mv', 'lua vim.lsp.buf.rename()', {})")
 
     -- DIAGNOSTICS
@@ -57,12 +57,6 @@ local ui = {
 }
 
 cmp.setup({
-    snippet = {
-        expand = function(args) require('luasnip').lsp_expand(args.body) end },
-    window = {
-        completion = ui,
-        documentation = ui
-    },
     experimental = {
         ghost_text = { hl_group = "@comment" },
     },
@@ -71,7 +65,14 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<Right>'] = cmp.mapping.confirm({ select = true }),
     }),
+    snippet = {
+        expand = function(args) require('luasnip').lsp_expand(args.body) end
+    },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' }, { name = 'luasnip' } }, { { name = 'buffer' }, { name = 'path' },
-    })
+    }),
+    window = {
+        completion = ui,
+        documentation = ui
+    },
 })

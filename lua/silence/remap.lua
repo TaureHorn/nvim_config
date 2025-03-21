@@ -24,6 +24,13 @@ kmp("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
 
 kmp("n", "zz", vim.cmd.ZenMode, { desc = "toggle ZenMode" })
 
+kmp('n', '<c-l>', function()
+    local word = vim.call('expand', '<cword>')
+    local input = "console.log('" .. word .. "', " .. word .. ")"
+    vim.cmd('let @l = "' .. input .. '"')
+    vim.cmd('put l')
+end, { desc = "quick make console.log on word under cursor" })
+
 -- Window/split navigation
 kmp("n", "<leader><CR>", vim.cmd.vsp, { desc = "vertical split" })
 kmp("n", "<leader><Tab>", vim.cmd.sp, { desc = "split" })

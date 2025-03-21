@@ -32,7 +32,6 @@ vim.opt.incsearch = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrw_Plugin = 1
 
-
 -- make cursorline only on active split/window
 local toggle_options = vim.api.nvim_create_augroup("ToggleOptions", { clear = true })
 vim.api.nvim_create_autocmd("WinLeave", {
@@ -56,4 +55,5 @@ vim.cmd("call nvim_create_user_command('Clip', '%y+', {})")
 -- these next two are just kinda gimmicks lol
 vim.cmd("call nvim_create_user_command('Hex', '%!xxd', {})")
 vim.cmd("call nvim_create_user_command('Unhex', '%!xxd -r', {})")
+
 

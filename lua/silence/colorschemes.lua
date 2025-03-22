@@ -2,7 +2,6 @@
 CP = "cyberpunk"
 SH = "silverhand"
 EL = "eldritch"
-Bones = "voidbones"
 Matrix = "thematrix"
 Rose = "rosebones"
 
@@ -19,20 +18,32 @@ local function schemeSetter(input)
 end
 
 function Color(inputColor)
-    schemeSetter(inputColor)
+    if not inputColor then
+        schemeSetter(DEFAULT_COLORSCHEME)
+    else
+        schemeSetter(inputColor)
+    end
 end
 
-function Tcolor(inputColor)
-    schemeSetter(inputColor)
+function Trans()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
+function Tcolor(inputColor)
+    if not inputColor then
+        schemeSetter(DEFAULT_COLORSCHEME)
+    else
+        schemeSetter(inputColor)
+    end
+    Trans()
+end
+
 local function setDefault()
     if DEFAULT_TRANSPARENCY == true then
-        Tcolor(DEFAULT_COLORSCHEME)
+        Tcolor()
     elseif DEFAULT_TRANSPARENCY == false then
-        Color(DEFAULT_COLORSCHEME)
+        Color()
     else
         error("Something went wrong setting the default colorscheme")
     end
@@ -46,6 +57,6 @@ function Highlighter()
         vim.api.nvim_command("hi Number guifg=#ff8d1f gui=italic")
     end
 end
+
 Highlighter()
 
--- TODO

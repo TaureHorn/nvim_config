@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.g.maplocalleader = '<CR>'
+vim.g.maplocalleader = '/'
 
 local map = vim.keymap.set
 map("n", "H", "^", { desc = "move cursor to beginning of line" })

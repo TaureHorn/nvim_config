@@ -59,14 +59,15 @@ return {
 
             local function keymap()
                 print(" ** LSP keymap has attached to a buffer with a running LSP server ** ")
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })       -- hover info
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 }) -- jump to definition
+                local map = vim.keymap.set
+                map("n", "K", vim.lsp.buf.hover, { buffer = 0 })       -- hover info
+                map("n", "gd", vim.lsp.buf.definition, { buffer = 0 }) -- jump to definition
                 vim.cmd("call nvim_create_user_command('Mv', 'lua vim.lsp.buf.rename()', {})")
 
                 -- DIAGNOSTICS
-                vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })         -- jump to next diagnostic flag
-                vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })         -- jump to prev diagnostic flag
-                vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<CR>", { buffer = 0 }) -- telescope diagnostic flags
+                map("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })         -- jump to next diagnostic flag
+                map("n", "<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })         -- jump to prev diagnostic flag
+                map("n", "<leader>df", "<cmd>Telescope diagnostics<CR>", { buffer = 0 }) -- telescope diagnostic flags
                 -- CTRL-Q within Telescope diagnostics to add results to lower window
             end
 

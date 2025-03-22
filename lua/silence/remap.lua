@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 
 local kmp = vim.keymap.set
@@ -45,12 +44,13 @@ kmp("n", "<A-Up>", "<cmd>res +20<CR>", { desc = "increase window height by 20" }
 kmp("n", "<A-Right>", "<cmd>vertical res +20<CR>", { desc = "increase window width by 20" })
 
 -- NVIM COMMENT
-kmp({"n", "v"}, '<C-/>', ':CommentToggle<CR>', { desc = "toggle comment (kitty)" })
+kmp({ "n", "v" }, '<C-/>', ':CommentToggle<CR>', { desc = "toggle comment (kitty)" })
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
 kmp('n', '<C-P>', builtin.find_files, { desc = "open Telescope file finder" })
 kmp('n', '<leader>fw', builtin.live_grep, { desc = "open Telescope file grep" })
+kmp('n', '<leader>c', "<cmd>Telescope neoclip<CR>", { desc = "launch neoclip clipboard manager window" })
 kmp('n', '<leader>fd', vim.diagnostic.setqflist)
 
 -- INSERT MODE REMAPS

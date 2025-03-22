@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
     use "sitiom/nvim-numbertoggle" -- Toggles between relative and absolute line numbers
     use "nvim-lua/plenary.nvim"    -- don't forget to add this one if you don't have it yet!
     use "tpope/vim-fugitive"
+    use "AckslD/nvim-neoclip.lua" -- clipboard manager
 
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.4', requires = { { 'nvim-lua/plenary.nvim' } }, } -- Quick file search and navigation
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }                                        -- TREESITTER

@@ -183,6 +183,11 @@ _G.packer_plugins = {
     path = "/home/silence/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-neoclip.lua"] = {
+    loaded = true,
+    path = "/home/silence/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
+  },
   ["nvim-numbertoggle"] = {
     loaded = true,
     path = "/home/silence/.local/share/nvim/site/pack/packer/start/nvim-numbertoggle",

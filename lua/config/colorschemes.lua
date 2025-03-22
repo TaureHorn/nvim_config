@@ -1,9 +1,9 @@
+
 -- colorschemes
 CP = "cyberpunk"
 SH = "silverhand"
 EL = "eldritch"
 Matrix = "thematrix"
-Rose = "rosebones"
 
 -- defaults
 local DEFAULT_COLORSCHEME = CP

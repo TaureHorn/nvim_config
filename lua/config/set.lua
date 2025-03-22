@@ -46,14 +46,9 @@ vim.api.nvim_create_autocmd("WinEnter", {
 })
 
 -- COMMAND ALIASES
-vim.cmd("call nvim_create_user_command('Hist', 'NoiceHistory', {})")
+-- vim.cmd("call nvim_create_user_command('Hist', 'NoiceHistory', {})")
 vim.cmd("call nvim_create_user_command('Ts', 'Telescope resume', {})")
-vim.cmd("call nvim_create_user_command('Ft', 'FloatermNew', {})")
-vim.cmd("call nvim_create_user_command('Ls', 'LspInfo', {})")
+-- vim.cmd("call nvim_create_user_command('Ft', 'FloatermNew', {})")
+-- vim.cmd("call nvim_create_user_command('Ls', 'LspInfo', {})")
 vim.cmd("call nvim_create_user_command('Clip', '%y+', {})")
-
--- these next two are just kinda gimmicks lol
-vim.cmd("call nvim_create_user_command('Hex', '%!xxd', {})")
-vim.cmd("call nvim_create_user_command('Unhex', '%!xxd -r', {})")
-
 

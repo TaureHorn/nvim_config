@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
     use { 'nvim-lualine/lualine.nvim', requires = { "meuter/lualine-so-fancy.nvim", 'nvim-tree/nvim-web-devicons', opt = true } } -- Statusline
     use { "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", } }                                                            -- Noice adds a bunch of visual flavour e.g. centred cmd line and message popups
     use  "norcalli/nvim-colorizer.lua"
+    use "folke/todo-comments.nvim"
 
     --  /////// FUNCTIONAL PLUGINS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     use "mbbill/undotree"          -- tracks file changes and allows to navigate and restore from history

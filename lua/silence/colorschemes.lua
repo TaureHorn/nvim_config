@@ -10,8 +10,6 @@ Rose = "rosebones"
 local DEFAULT_COLORSCHEME = CP
 local DEFAULT_TRANSPARENCY = true
 
--- TODO
-
 local function schemeSetter(input)
     local scheme = "colorscheme " .. input
     vim.cmd("set background=dark")
@@ -39,7 +37,6 @@ local function setDefault()
         error("Something went wrong setting the default colorscheme")
     end
 end
-
 setDefault()
 
 function Highlighter()
@@ -49,6 +46,6 @@ function Highlighter()
         vim.api.nvim_command("hi Number guifg=#ff8d1f gui=italic")
     end
 end
-
 Highlighter()
 
+-- TODO

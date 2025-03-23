@@ -1,4 +1,18 @@
 return {
+    -- mason to install lsp servers
+    {
+        'williamboman/mason.nvim',
+        config = function()
+            require("mason").setup({
+                ui = {
+                    border = "single",
+                    height = 0.6,
+                    width = 0.33,
+                }
+            })
+        end
+    },
+
     {
         'hrsh7th/nvim-cmp',
         config = function()
@@ -37,19 +51,7 @@ return {
     { 'L3MON4D3/LuaSnip' },
     { 'neovim/nvim-lspconfig', },
 
-    -- mason to install lsp servers
-    {
-        'williamboman/mason.nvim',
-        config = function()
-            require("mason").setup({
-                ui = {
-                    border = "single",
-                    height = 0.6,
-                    width = 0.33,
-                }
-            })
-        end
-    },
+
     {
         'williamboman/mason-lspconfig.nvim',
         config = function()

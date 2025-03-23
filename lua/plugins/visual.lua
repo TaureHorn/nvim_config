@@ -1,4 +1,9 @@
 return {
+    -- eldritch colorscheme
+    {
+        'eldritch-theme/eldritch.nvim',
+        opts = {}
+    },
 
     -- highlights color codes
     {
@@ -135,6 +140,16 @@ return {
             })
         end
     },
+
+    { 'luisiacc/the-matrix.nvim' },
+
+    -- main colorscheme
+    {
+        'thedenisnikulin/vim-cyberpunk',
+        lazy = false,
+        priorty = 1000
+    },
+
 
 
 }

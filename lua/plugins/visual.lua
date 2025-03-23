@@ -60,6 +60,7 @@ return {
         "folke/noice.nvim",
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
+            require('telescope').load_extension('noice')
             require("noice").setup({
                 views = {
                     cmdline_popup = {
@@ -136,6 +137,19 @@ return {
                 }
             })
         end
+    },
+
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            colors = {
+                error = { CP_Palette.orange },
+                hint = { CP_Palette.purple },
+                info = { CP_Palette.yellow },
+                warning = { CP_Palette.red },
+            }
+        }
     },
 
     { 'luisiacc/the-matrix.nvim' },

@@ -28,6 +28,7 @@
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
   "the-matrix.nvim": { "branch": "main", "commit": "14687931c32f0efd22f27f1cdd9b5d880bc8e207" },
+  "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "undotree": { "branch": "master", "commit": "b951b87b46c34356d44aa71886aecf9dd7f5788a" },
   "vim-cyberpunk": { "branch": "master", "commit": "2c009b8451732d8e9742fe354c134f6a34b41f92" }
 }

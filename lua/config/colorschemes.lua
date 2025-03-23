@@ -4,6 +4,17 @@ SH = "silverhand"
 EL = "eldritch"
 Matrix = "thematrix"
 
+CP_Palette = {
+    bg_red = '#a10036',
+    blue = '#28ffff',
+    green = '#1cd577',
+    indigo = '#2570d6',
+    orange = '#fd932d',
+    purple = '#9c2bf7',
+    red = '#ff0055',
+    yellow = '#f3e600'
+}
+
 -- defaults
 local DEFAULT_COLORSCHEME = CP
 local DEFAULT_TRANSPARENCY = true
@@ -57,3 +68,4 @@ function Highlighter()
     end
 end
 Highlighter()
+

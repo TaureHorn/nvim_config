@@ -2,6 +2,7 @@ return {
     -- mason to install lsp servers
     {
         'williamboman/mason.nvim',
+        priority = 800,
         config = function()
             require("mason").setup({
                 ui = {
@@ -54,6 +55,7 @@ return {
 
     {
         'williamboman/mason-lspconfig.nvim',
+        priority = 799,
         config = function()
             require("mason-lspconfig").setup()
 

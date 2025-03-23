@@ -63,8 +63,8 @@ return {
                 views = {
                     cmdline_popup = {
                         border = {
-                            style = "none",
-                            padding = { 1, 0 },
+                            style = "rounded",
+                            padding = { 0, 0 },
                         },
                         position = {
                             row = 40,
@@ -73,9 +73,6 @@ return {
                         size = {
                             width = 100,
                             height = "auto",
-                        },
-                        win_options = {
-                            cursorline = true
                         },
                     },
                     mini = {
@@ -135,7 +132,7 @@ return {
                 },
                 messages = {
                     enabled = true,
-                    view = 'mini'
+                    view = 'mini',
                 }
             })
         end

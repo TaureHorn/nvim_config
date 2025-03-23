@@ -1,4 +1,3 @@
-
 -- colorschemes
 CP = "cyberpunk"
 SH = "silverhand"
@@ -53,10 +52,11 @@ setDefault()
 function Highlighter()
     local colorscheme = vim.api.nvim_exec("colorscheme", true)
     if colorscheme == "cyberpunk" then
-        vim.api.nvim_command("hi @comment.todo guibg=white gui=bold,italic")
         vim.api.nvim_command("hi Number guifg=#ff8d1f gui=italic")
+        vim.api.nvim_command("hi Cursorline guifg=#ffffff guisp=#f3e600")
+        vim.api.nvim_command("hi FloatBorder guifg=#ff0055")
+        vim.api.nvim_command("hi NoiceCmdlinePopupBorder guifg=#ff0055")
+        vim.api.nvim_command("hi TelescopeBorder guifg=#ff0055")
     end
 end
-
 Highlighter()
-

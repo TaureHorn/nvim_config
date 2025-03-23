@@ -30,11 +30,7 @@ function Trans()
 end
 
 function Tcolor(inputColor)
-    if not inputColor then
-        schemeSetter(DEFAULT_COLORSCHEME)
-    else
-        schemeSetter(inputColor)
-    end
+    Color(inputColor)
     Trans()
 end
 

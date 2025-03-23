@@ -2,12 +2,10 @@ return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
-    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        local HEIGHT_RATIO = 0.6
-        local WIDTH_RATIO = 0.33
+        local HEIGHT_RATIO = 0.5
+        local WIDTH_RATIO = 0.25
 
         local function on_attach(bufnr)
             local api = require("nvim-tree.api")
@@ -38,7 +36,7 @@ return {
                         local center_y = ((vim.opt.lines:get() - window_h) / 2)
                             - vim.opt.cmdheight:get()
                         return {
-                            border = 'single',
+                            border = 'rounded',
                             relative = 'editor',
                             row = center_y,
                             col = center_x,

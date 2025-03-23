@@ -1,4 +1,5 @@
 return {
+
     -- eldritch colorscheme
     {
         'eldritch-theme/eldritch.nvim',
@@ -78,7 +79,7 @@ return {
                     mini = {
                         align = 'mesage-right',
                         border = {
-                            style = "rounded",
+                            style = "none",
                             padding = { 0, 0 },
                         },
                         position = {
@@ -145,7 +146,5 @@ return {
         lazy = false,
         priorty = 1000
     },
-
-
 
 }

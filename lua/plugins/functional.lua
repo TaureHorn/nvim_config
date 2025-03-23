@@ -4,7 +4,7 @@ return {
         'rmagatti/auto-session',
         config = function()
             require("auto-session").setup {
-                suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+                suppressed_dirs = { "~/", "~/Downloads", "/" },
             }
         end
     },
@@ -42,8 +42,7 @@ return {
 
             local map = vim.keymap.set
             map("n", "<leader>q", function() harpoon:list():add() end, { desc = "Add current buffer to harpoon list" })
-            map("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-                { desc = "Toggle harpoon buffer list" })
+            map("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Toggle harpoon buffer list" })
             map("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open telescope harpoon window" })
 
             map("n", "<leader>a", function() harpoon:list():select(1) end, { desc = "open harpoon buffer 1" })
@@ -67,6 +66,7 @@ return {
         'AckslD/nvim-neoclip.lua',
         config = function()
             require('neoclip').setup()
+            require('telescope').load_extension('neoclip')
         end
     },
 
@@ -75,4 +75,5 @@ return {
 
     -- undotree
     { 'mbbill/undotree' },
+
 }

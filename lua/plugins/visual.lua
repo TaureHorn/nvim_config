@@ -22,14 +22,14 @@ return {
         end
     },
 
-    -- indentation markers
     {
-        'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require('ibl').setup({
-                indent = { char = '│' }
-            })
-        end
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {
+            indent = { char = '|' }
+        },
     },
 
     -- status line
@@ -78,13 +78,13 @@ return {
                     mini = {
                         align = 'mesage-right',
                         border = {
-                            style = "none",
-                            padding = { 1, 0 },
+                            style = "rounded",
+                            padding = { 0, 0 },
                         },
                         position = {
                             row = 0,
                         },
-                        reverse = false,
+                        reverse = true,
                         size = {
                             width = "auto",
                             height = "auto",
@@ -93,7 +93,6 @@ return {
                         win_options = {
                             winhighlight = {
                                 Normal = "@boolean",
-                                FloatBorder = "@boolean"
                             },
                         },
                     },

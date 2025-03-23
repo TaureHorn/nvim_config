@@ -22,8 +22,6 @@ map("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "toggle nvim-tree window" })
 
 map("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
 
-map("n", "zz", vim.cmd.ZenMode, { desc = "toggle ZenMode" })
-
 map('n', '<c-l>', function()
     local word = vim.call('expand', '<cword>')
     local input = "console.log('" .. word .. "', " .. word .. ")"

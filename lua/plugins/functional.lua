@@ -13,7 +13,7 @@ return {
     {
         'ThePrimeagen/harpoon',
         branch = 'harpoon2',
-        dependencies = { 'nvim_lua/plenary.nvim',  'nvim-telescope/telescope.nvim'},
+        dependencies = { 'nvim_lua/plenary.nvim' },
         config = function()
             local harpoon = require("harpoon")
 
@@ -23,33 +23,33 @@ return {
                 }
             })
 
-            local conf = require("telescope.config").values
-            local function toggle_telescope(harpoon_files)
+            local function fzf_harpoon(harpoon_files)
                 local file_paths = {}
                 for _, item in ipairs(harpoon_files.items) do
                     table.insert(file_paths, item.value)
                 end
-
-                require("telescope.pickers").new({}, {
-                    prompt_title = "Harpoon",
-                    finder = require("telescope.finders").new_table({
-                        results = file_paths,
-                    }),
-                    previewer = conf.file_previewer({}),
-                    sorter = conf.generic_sorter({}),
-                }):find()
+                                local actions = require('fzf-lua').actions
+                require('fzf-lua').fzf_exec(file_paths, {
+                    actions = {
+                        ['enter'] = actions.file_edit_or_qf
+                    },
+                    previewer = 'builtin',
+                    winopts = {
+                        title = ' hwapooooooooon buffers '
+                    }
+                })
             end
 
             local map = vim.keymap.set
-            map("n", "<leader>q", function() harpoon:list():add() end, { desc = "Add current buffer to harpoon list" })
+            map("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add current buffer to harpoon list" })
             map("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Toggle harpoon buffer list" })
-            map("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open telescope harpoon window" })
+            map("n", "<C-e>", function() fzf_harpoon(harpoon:list()) end, { desc = "Open fzf-lua harpoon window" })
 
-            map("n", "<leader>a", function() harpoon:list():select(1) end, { desc = "open harpoon buffer 1" })
-            map("n", "<leader>s", function() harpoon:list():select(2) end, { desc = "open harpoon buffer 2" })
-            map("n", "<leader>d", function() harpoon:list():select(3) end, { desc = "open harpoon buffer 3" })
-            map("n", "<leader>f", function() harpoon:list():select(4) end, { desc = "open harpoon buffer 4" })
-            map("n", "<leader>g", function() harpoon:list():select(5) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>q", function() harpoon:list():select(1) end, { desc = "open harpoon buffer 1" })
+            map("n", "<leader>w", function() harpoon:list():select(2) end, { desc = "open harpoon buffer 2" })
+            map("n", "<leader>e", function() harpoon:list():select(3) end, { desc = "open harpoon buffer 3" })
+            map("n", "<leader>r", function() harpoon:list():select(4) end, { desc = "open harpoon buffer 4" })
+            map("n", "<leader>t", function() harpoon:list():select(5) end, { desc = "open harpoon buffer 5" })
         end
     },
 
@@ -66,7 +66,6 @@ return {
         'AckslD/nvim-neoclip.lua',
         config = function()
             require('neoclip').setup()
-            require('telescope').load_extension('neoclip')
         end
     },
 

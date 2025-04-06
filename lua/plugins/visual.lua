@@ -60,7 +60,6 @@ return {
         "folke/noice.nvim",
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
-            require('telescope').load_extension('noice')
             require("noice").setup({
                 views = {
                     cmdline_popup = {

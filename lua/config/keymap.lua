@@ -59,7 +59,7 @@ map("i", "<C-H>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
 map("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
 map("i", "<c-k>", "()<Esc>i", { desc = "shorcut for a pair of parentheses" })
 map("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" })
-map("i", "<c-q>", "<C-K>", { desc = "shorcut for a pair of square brackets" })
+map("i", "<c-q>", "<C-K>", { desc = "" })
 
 -- VISUAL MODE REMAPS
 map("v", "<c-y>", '"+y', { desc = "yank selection to system clipboard" })
@@ -77,3 +77,4 @@ map("t", "<Left>", "<C-\\><C-n><C-w>h", { desc = "move to different split from t
 map("t", "<Down>", "<C-\\><C-n><C-w>j", { desc = "move to different split from terminal" })
 map("t", "<Up>", "<C-\\><C-n><C-w>k", { desc = "move to different split from terminal" })
 map("t", "<Right>", "<C-\\><C-n><C-w>l", { desc = "move to different split from terminal" })
+

@@ -52,6 +52,8 @@ map('n', '<leader>fw', builtin.live_grep, { desc = "open Telescope file grep" })
 map('n', '<leader>c', "<cmd>Telescope neoclip<CR>", { desc = "launch neoclip clipboard manager window" })
 map('n', '<leader>fd', vim.diagnostic.setqflist)
 
+map('n', '<leader>l', "<cmd>FzfLua<CR>")
+
 -- INSERT MODE REMAPS
 map("i", "<C-H>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
 map("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
@@ -75,4 +77,3 @@ map("t", "<Left>", "<C-\\><C-n><C-w>h", { desc = "move to different split from t
 map("t", "<Down>", "<C-\\><C-n><C-w>j", { desc = "move to different split from terminal" })
 map("t", "<Up>", "<C-\\><C-n><C-w>k", { desc = "move to different split from terminal" })
 map("t", "<Right>", "<C-\\><C-n><C-w>l", { desc = "move to different split from terminal" })
-

@@ -27,12 +27,25 @@ local function schemeSetter(input)
     vim.cmd(scheme)
 end
 
+function Highlighter()
+    local colorscheme = vim.api.nvim_exec("colorscheme", true)
+    if colorscheme == "cyberpunk" then
+        vim.api.nvim_command("hi Number guifg=#ff8d1f")
+        vim.api.nvim_command("hi Cursorline guifg=#ffffff guibg=#ff0055")
+        vim.api.nvim_command("hi FloatBorder guifg=#ff0055")
+        vim.api.nvim_command("hi NoiceCmdlinePopupBorder guifg=#ff0055")
+        vim.api.nvim_command("hi TelescopeBorder guifg=#ff0055")
+        vim.api.nvim_command("hi WinSeparator guifg=#a10036")
+    end
+end
+
 function Color(inputColor)
     if not inputColor then
         schemeSetter(DEFAULT_COLORSCHEME)
     else
         schemeSetter(inputColor)
     end
+    Highlighter()
 end
 
 function Trans()
@@ -56,16 +69,4 @@ local function setDefault()
 end
 setDefault()
 
-function Highlighter()
-    local colorscheme = vim.api.nvim_exec("colorscheme", true)
-    if colorscheme == "cyberpunk" then
-        vim.api.nvim_command("hi Number guifg=#ff8d1f")
-        vim.api.nvim_command("hi Cursorline guifg=#ffffff guibg=#ff0055")
-        vim.api.nvim_command("hi FloatBorder guifg=#ff0055")
-        vim.api.nvim_command("hi NoiceCmdlinePopupBorder guifg=#ff0055")
-        vim.api.nvim_command("hi TelescopeBorder guifg=#ff0055")
-        vim.api.nvim_command("hi WinSeparator guifg=#a10036")
-    end
-end
-Highlighter()
 

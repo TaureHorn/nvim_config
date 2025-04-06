@@ -46,8 +46,8 @@ vim.api.nvim_create_autocmd("WinEnter", {
 })
 
 -- COMMAND ALIASES
-vim.cmd("call nvim_create_user_command('Hist', 'Telescope noice', {})")
-vim.cmd("call nvim_create_user_command('Ts', 'Telescope resume', {})")
+vim.cmd("call nvim_create_user_command('Hist', 'Noice fzf', {})")
+vim.cmd("call nvim_create_user_command('Fz', 'FzfLua resume', {})")
 vim.cmd("call nvim_create_user_command('Ls', 'LspInfo', {})")
 vim.cmd("call nvim_create_user_command('Clip', '%y+', {})")
 

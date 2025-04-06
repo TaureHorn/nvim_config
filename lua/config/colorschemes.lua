@@ -34,7 +34,6 @@ function Highlighter()
         vim.api.nvim_command("hi Cursorline guifg=#ffffff guibg=#ff0055")
         vim.api.nvim_command("hi FloatBorder guifg=#ff0055")
         vim.api.nvim_command("hi NoiceCmdlinePopupBorder guifg=#ff0055")
-        vim.api.nvim_command("hi TelescopeBorder guifg=#ff0055")
         vim.api.nvim_command("hi WinSeparator guifg=#a10036")
     end
 end

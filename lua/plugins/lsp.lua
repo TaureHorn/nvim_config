@@ -71,8 +71,6 @@ return {
                 -- DIAGNOSTICS
                 map("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })         -- jump to next diagnostic flag
                 map("n", "<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })         -- jump to prev diagnostic flag
-                map("n", "<leader>df", "<cmd>Telescope diagnostics<CR>", { buffer = 0 }) -- telescope diagnostic flags
-                -- CTRL-Q within Telescope diagnostics to add results to lower window
             end
 
             require("mason-lspconfig").setup_handlers {

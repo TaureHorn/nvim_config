@@ -1,4 +1,23 @@
 return {
+
+    {
+        'neovim/nvim-lspconfig',
+        config = function()
+            local servers = {
+                [1] = 'bashls',
+                [2] = 'cssls',
+                [3] = 'gopls',
+                [4] = 'lua_ls',
+                [5] = 'ts_ls',
+            }
+
+            for _, server in ipairs(servers) do
+                require('lspconfig')[server].setup{}
+            end
+
+        end
+    },
+
     -- mason to install lsp servers
     {
         'williamboman/mason.nvim',
@@ -7,12 +26,18 @@ return {
             require("mason").setup({
                 ui = {
                     border = "single",
-                    height = 0.6,
-                    width = 0.33,
+                    -- height = 0.6,
+                    height = 1,
+                    -- width = 0.33,
+                    width = 1,
                 }
             })
         end
     },
+
+    --end
+}
+    --[[
 
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-buffer' },
@@ -106,3 +131,4 @@ return {
         end
     }
 }
+--]]

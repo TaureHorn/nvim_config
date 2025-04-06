@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     checker = { enabled = false },
-    install = { colorscheme = { 'default' } },
+    install = { colorscheme = { 'wildcharm' }, missing = true },
     spec = {
         { import = 'plugins' },
     },

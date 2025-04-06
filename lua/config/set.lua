@@ -1,5 +1,6 @@
 vim.cmd("set guicursor=n-v-c-i:block")
 vim.cmd("set mouse=")
+vim.cmd("set termguicolors")
 
 -- autoloads directory specific configs in a .nvim.lua file and attempts to do so securely
 vim.cmd("set exrc")
@@ -51,3 +52,13 @@ vim.cmd("call nvim_create_user_command('Fz', 'FzfLua resume', {})")
 vim.cmd("call nvim_create_user_command('Ls', 'LspInfo', {})")
 vim.cmd("call nvim_create_user_command('Clip', '%y+', {})")
 
+CP_Palette = {
+    bg_red = '#a10036',
+    blue = '#28ffff',
+    green = '#1cd577',
+    indigo = '#2570d6',
+    orange = '#fd932d',
+    purple = '#9c2bf7',
+    red = '#ff0055',
+    yellow = '#f3e600'
+}

@@ -1,3 +1,4 @@
+
 return {
 
     -- lspconfig to initialise lsp servers
@@ -15,8 +16,14 @@ return {
         },
         config = function(_, opts)
             local lspconfig = require('lspconfig')
+
+            local handlers = {
+                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
+            }
+
             for server, config in pairs(opts.servers) do
                 config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+                config.handlers = handlers
                 lspconfig[server].setup(config)
             end
         end

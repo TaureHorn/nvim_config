@@ -4,23 +4,24 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = { 'saghen/blink.cmp' },
-        config = function()
-            local servers = {
-                [1] = 'bashls',
-                [2] = 'cssls',
-                [3] = 'gopls',
-                [4] = 'lua_ls',
-                [5] = 'ts_ls',
-            }
-
-            for _, server in ipairs(servers) do
-                local capabilities = require('blink.cmp').get_lsp_capabilities()
-                require('lspconfig')[server].setup {
-                    capabilities = capabilities
-                }
+        opts = {
+            servers = {
+                bashls = {},
+                cssls = {},
+                gopls = {},
+                lua_ls = {},
+                ts_ls = {},
+            },
+        },
+        config = function(_, opts)
+            local lspconfig = require('lspconfig')
+            for server, config in pairs(opts.servers) do
+                config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+                lspconfig[server].setup(config)
             end
         end
     },
+
     -- blink.cmp for auto completion
     {
         'saghen/blink.cmp',
@@ -73,6 +74,7 @@ return {
             },
         },
     },
+
     -- mason to install lsp servers
     {
         'williamboman/mason.nvim',

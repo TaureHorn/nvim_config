@@ -21,7 +21,6 @@ return {
             end
         end
     },
-
     -- blink.cmp for auto completion
     {
         'saghen/blink.cmp',
@@ -34,7 +33,8 @@ return {
                 ghost_text = { enabled = true },
                 documentation = {
                     window = {
-                        border = 'rounded'
+                        border = 'rounded',
+                        winhighlight = 'Pmenu:BlinkCmpDocBorder'
                     },
                 },
                 menu = {
@@ -52,7 +52,7 @@ return {
                         treesitter = { 'lsp' }
                     },
                     min_width = 20
-                }
+                },
             },
             keymap = {
                 ['<Up>'] = { 'select_prev', 'fallback' },
@@ -61,12 +61,18 @@ return {
                 ['<Right>'] = { 'accept', 'fallback' },
                 ['<CR>'] = { 'accept', 'fallback' },
                 ['<c-g>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
-                ['<c-i>'] = { 'show_signature', 'hide_signature', 'fallback' },
+                ['<c-i>'] = { 'hide_signature', 'show_signature', 'fallback' },
                 ['<c-k>'] = {} -- unbind c-k that toggles signature
+            },
+            signature = {
+                enabled = true,
+                window = {
+                    border = 'rounded',
+                    winhighlight = 'Pmenu:BlinkCmpSignatureHelpBorder'
+                }
             },
         },
     },
-
     -- mason to install lsp servers
     {
         'williamboman/mason.nvim',

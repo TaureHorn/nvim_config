@@ -22,6 +22,7 @@ function Highlighter()
         vim.api.nvim_command("hi Number guifg=#ff8d1f")
         vim.api.nvim_command("hi Cursorline guifg=#ffffff guibg=#ff0055")
         vim.api.nvim_command("hi FloatBorder guifg=#ff0055")
+        vim.api.nvim_command("hi BlinkCmpDocSeparator guifg=#ff0055")
         vim.api.nvim_command("hi NoiceCmdlinePopupBorder guifg=#ff0055")
         vim.api.nvim_command("hi WinSeparator guifg=#a10036")
     end
@@ -119,6 +120,11 @@ return {
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
             require("noice").setup({
+                lsp = {
+                    signature = {
+                        enabled = false,
+                    },
+                },
                 views = {
                     cmdline_popup = {
                         border = {
@@ -214,7 +220,7 @@ return {
     -- main colorscheme
     {
         'thedenisnikulin/vim-cyberpunk',
-        config = function ()
+        config = function()
             setDefault()
         end
     },

@@ -24,6 +24,9 @@ return {
             for server, config in pairs(opts.servers) do
                 config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
                 config.handlers = handlers
+                config.on_attach = function ()
+                    print(server .. 'lsp server attached to buffer')
+                end
                 lspconfig[server].setup(config)
             end
         end

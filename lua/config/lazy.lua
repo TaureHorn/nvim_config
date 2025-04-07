@@ -24,5 +24,11 @@ require('lazy').setup({
     },
     ui = {
         border = 'rounded',
-    }
+        size = {
+            height = 1,
+            width = 1
+        },
+        title = ' LAZY.NVIM ',
+        title_pos = 'center',
+    },
 })

@@ -1,4 +1,80 @@
 return {
+
+    -- lspconfig to initialise lsp servers
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = { 'saghen/blink.cmp' },
+        opts = {
+            servers = {
+                bashls = {},
+                cssls = {},
+                gopls = {},
+                lua_ls = {},
+                ts_ls = {},
+            },
+        },
+        config = function(_, opts)
+            local lspconfig = require('lspconfig')
+            for server, config in pairs(opts.servers) do
+                config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+                lspconfig[server].setup(config)
+            end
+        end
+    },
+
+    -- blink.cmp for auto completion
+    {
+        'saghen/blink.cmp',
+        version = '1.*',
+        opts = {
+            appearance = {
+                nerd_font_variant = 'Nerd Font Mono'
+            },
+            completion = {
+                ghost_text = { enabled = true },
+                documentation = {
+                    window = {
+                        border = 'rounded',
+                        winhighlight = 'Pmenu:BlinkCmpDocBorder'
+                    },
+                },
+                menu = {
+                    border = 'rounded',
+                    draw = {
+                        columns = {
+                            { 'label', gap = 5 },
+                            { 'kind' }
+                        },
+                        components = {
+                            kind = {
+                                text = function(ctx) return ' |' .. ctx.kind .. '|' end
+                            }
+                        },
+                        treesitter = { 'lsp' }
+                    },
+                    min_width = 20
+                },
+            },
+            keymap = {
+                ['<Up>'] = { 'select_prev', 'fallback' },
+                ['<Down>'] = { 'select_next', 'fallback' },
+                ['<Left>'] = { 'hide', 'fallback' },
+                ['<Right>'] = { 'accept', 'fallback' },
+                ['<CR>'] = { 'accept', 'fallback' },
+                ['<c-g>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
+                ['<c-i>'] = { 'hide_signature', 'show_signature', 'fallback' },
+                ['<c-k>'] = {} -- unbind c-k that toggles signature
+            },
+            signature = {
+                enabled = true,
+                window = {
+                    border = 'rounded',
+                    winhighlight = 'Pmenu:BlinkCmpSignatureHelpBorder'
+                }
+            },
+        },
+    },
+
     -- mason to install lsp servers
     {
         'williamboman/mason.nvim',
@@ -7,102 +83,11 @@ return {
             require("mason").setup({
                 ui = {
                     border = "single",
-                    height = 0.6,
-                    width = 0.33,
+                    height = 1,
+                    width = 1,
                 }
             })
         end
     },
 
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/cmp-buffer' },
-    { 'hrsh7th/cmp-path' },
-    { 'saadparwaiz1/cmp_luasnip' },
-    { 'L3MON4D3/LuaSnip' },
-    { 'neovim/nvim-lspconfig', },
-
-    {
-        'hrsh7th/nvim-cmp',
-        config = function()
-            local cmp = require('cmp')
-            local ui = {
-                border = 'rounded',
-                winhighlight = "Normal:Normal"
-            }
-
-            cmp.setup({
-                experimental = {
-                    ghost_text = { hl_group = "@comment" },
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ['<Left>'] = cmp.mapping.abort(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-                    ['<Right>'] = cmp.mapping.confirm({ select = true }),
-                }),
-                snippet = {
-                    expand = function(args)
-                        require('luasnip').lsp_expand(args.body)
-                    end
-                },
-                sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'buffer' },
-                    { name = 'path' },
-                }),
-                window = {
-                    completion = ui,
-                    documentation = ui
-                },
-            })
-        end
-    },
-
-    {
-        'williamboman/mason-lspconfig.nvim',
-        priority = 799,
-        config = function()
-            require("mason-lspconfig").setup()
-
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-            local function keymap()
-                -- print(" ** LSP keymap has attached to a buffer with a running LSP server: " .. server_name ..  " **")
-                local map = vim.keymap.set
-                map("n", "K", vim.lsp.buf.hover, { buffer = 0 })       -- hover info
-                map("n", "gd", vim.lsp.buf.definition, { buffer = 0 }) -- jump to definition
-                vim.cmd("call nvim_create_user_command('Mv', 'lua vim.lsp.buf.rename()', {})")
-
-                -- DIAGNOSTICS
-                map("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 }) -- jump to next diagnostic flag
-                map("n", "<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 }) -- jump to prev diagnostic flag
-            end
-
-            require("mason-lspconfig").setup_handlers {
-                function(server_name)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities,
-                        on_attach = keymap(),
-                        root_dir = vim.fs.dirname,
-                    }
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        on_attach = keymap,
-                        root_dir = vim.fs.dirname,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim" }
-                                }
-                            }
-                        }
-                    }
-                end
-            }
-        end
-    }
 }

@@ -22,13 +22,6 @@ map("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "toggle nvim-tree window" })
 
 map("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
 
-map('n', '<c-l>', function()
-    local word = vim.call('expand', '<cword>')
-    local input = "console.log('" .. word .. "', " .. word .. ")"
-    vim.cmd('let @l = "' .. input .. '"')
-    vim.cmd('put l')
-end, { desc = "quick make console.log on word under cursor" })
-
 -- Window/split navigation
 map("n", "<leader><CR>", vim.cmd.vsp, { desc = "vertical split" })
 map("n", "<leader><Esc>", vim.cmd.sp, { desc = "split" })
@@ -65,8 +58,10 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "move select block down" })
 map("v", "m", "%", { desc = "move cursor to paired bracket" })
 map("v", "H", "^", { desc = "move cursor to beginning of line" })
 map("v", "L", "$", { desc = "move cursor to end of line" })
-map("v", "<C-j>", "}", { desc = "move down by paragraph" })
-map("v", "<C-k>", "{", { desc = "move up by paragraph" })
+map("v", "<c-j>", "}", { desc = "move down by paragraph" })
+map("v", "<c-k>", "{", { desc = "move up by paragraph" })
+map("v", "<c-l>", "yoconsole.log('<Esc>pa', <Esc>pa)<Esc>", { desc = "console.log selected block" })
+
 
 -- TERMINAL MODE REMAPS
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "exit terminal mode" })

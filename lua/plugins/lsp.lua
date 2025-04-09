@@ -25,6 +25,7 @@ return {
     -- blink.cmp for auto completion
     {
         'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
         version = '1.*',
         opts = {
             appearance = {

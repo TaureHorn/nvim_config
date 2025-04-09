@@ -1,4 +1,3 @@
-
 return {
 
     -- lspconfig to initialise lsp servers
@@ -10,7 +9,7 @@ return {
                 bashls = {},
                 cssls = {},
                 gopls = {},
-                lua_ls = {},
+                lua_ls = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
                 ts_ls = {},
             },
         },
@@ -24,8 +23,8 @@ return {
             for server, config in pairs(opts.servers) do
                 config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
                 config.handlers = handlers
-                config.on_attach = function ()
-                    print(server .. ' >>> lsp server attached to buffer')
+                config.on_attach = function()
+                    print(server .. ' >>> lsp server attached to buffer in file [' .. vim.fn.expand('%:t') .. ']')
                 end
                 lspconfig[server].setup(config)
             end

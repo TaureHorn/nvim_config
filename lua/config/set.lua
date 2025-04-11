@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd("WinEnter", {
 
 -- adds register l to take visual selection and add a print statement base of the filetype
 local print_visual_selection = vim.api.nvim_create_augroup("PrintVisualSelection", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("BufEnter", {
     group = print_visual_selection,
     desc = "set register to print visual selection based on filetype",
     callback = function ()

@@ -55,11 +55,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
         local filetype = vim.bo.filetype
         local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
         if filetype == 'javascript' then
-            vim.fn.setreg('l', "yoconsole.log('" .. esc .. "pa', " .. esc .. "pa)")
+            vim.fn.setreg('l', "yoconsole.log('" .. esc .. "pa', " .. esc .. "pa)" .. esc)
         elseif filetype == 'lua' then
-            vim.fn.setreg('l', "yoprint('" .. esc .. "pa', " .. esc .. "pa)")
+            vim.fn.setreg('l', "yoprint('" .. esc .. "pa', " .. esc .. "pa)" .. esc)
         elseif filetype == 'sh' then
-            vim.fn.setreg('l', 'yoecho "' .. esc .. 'pa $' .. esc .. 'pa"')
+            vim.fn.setreg('l', 'yoecho "' .. esc .. 'pa $' .. esc .. 'pa"' .. esc)
         end
     end
 })

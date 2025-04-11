@@ -60,8 +60,6 @@ map("v", "H", "^", { desc = "move cursor to beginning of line" })
 map("v", "L", "$", { desc = "move cursor to end of line" })
 map("v", "<c-j>", "}", { desc = "move down by paragraph" })
 map("v", "<c-k>", "{", { desc = "move up by paragraph" })
-map("v", "<c-l>", "yoconsole.log('<Esc>pa', <Esc>pa)<Esc>", { desc = "console.log selected block" })
-
 
 -- TERMINAL MODE REMAPS
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "exit terminal mode" })

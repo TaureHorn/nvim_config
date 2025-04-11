@@ -46,6 +46,24 @@ vim.api.nvim_create_autocmd("WinEnter", {
     command = "lua vim.opt.cursorline = true",
 })
 
+-- adds register l to take visual selection and add a print statement base of the filetype
+local print_visual_selection = vim.api.nvim_create_augroup("PrintVisualSelection", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    group = print_visual_selection,
+    desc = "set register to print visual selection based on filetype",
+    callback = function ()
+        local filetype = vim.bo.filetype
+        local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
+        if filetype == 'javascript' then
+            vim.fn.setreg('l', "yoconsole.log('" .. esc .. "pa', " .. esc .. "pa)")
+        elseif filetype == 'lua' then
+            vim.fn.setreg('l', "yoprint('" .. esc .. "pa', " .. esc .. "pa)")
+        elseif filetype == 'sh' then
+            vim.fn.setreg('l', 'yoecho "' .. esc .. 'pa $' .. esc .. 'pa"')
+        end
+    end
+})
+
 -- COMMAND ALIASES
 vim.cmd("call nvim_create_user_command('Hist', 'Noice fzf', {})")
 vim.cmd("call nvim_create_user_command('Fz', 'FzfLua resume', {})")

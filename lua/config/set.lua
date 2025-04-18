@@ -33,6 +33,10 @@ vim.opt.incsearch = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrw_Plugin = 1
 
+vim.diagnostic.config({
+    virtual_text = true
+})
+
 -- make cursorline only on active split/window
 local toggle_options = vim.api.nvim_create_augroup("ToggleOptions", { clear = true })
 vim.api.nvim_create_autocmd("WinLeave", {
@@ -51,7 +55,7 @@ local print_visual_selection = vim.api.nvim_create_augroup("PrintVisualSelection
 vim.api.nvim_create_autocmd("BufEnter", {
     group = print_visual_selection,
     desc = "set register to print visual selection based on filetype",
-    callback = function ()
+    callback = function()
         local filetype = vim.bo.filetype
         local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
         if filetype == 'javascript' then

@@ -7,7 +7,6 @@ map("n", "L", "$", { desc = "move cursor to end of line" })
 map("n", "<C-j>", "}", { desc = "move down by paragraph" })
 map("n", "<C-k>", "{", { desc = "move up by paragraph" })
 
-map("n", "m", "%", { desc = "navigate cursor to paired bracket" })
 map("n", "\\", vim.cmd.noh, { desc = "noh to stop highlighting" })
 map("n", "<leader>p", "jPk", { desc = "paste below w/o moving cursor" })
 map("n", "n", "nzzzv", { desc = "keep cursor in middle when moving through search results" })
@@ -17,6 +16,8 @@ map("n", "<leader>'", "bi'<Esc>ea'<Esc>", { desc = "wrap word under cursor in ''
 map("n", ",", "za", { desc = "toggle fold" })
 
 map("n", "<leader>ff", vim.lsp.buf.format, { desc = "format buffer" })
+map("n", "gn", vim.diagnostic.goto_next, { desc = "jump to next diagnostic message" })
+map("n", "gp", vim.diagnostic.goto_prev, { desc = "jump to prev diagnostic message" })
 
 map("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "toggle nvim-tree window" })
 
@@ -52,7 +53,7 @@ map("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" }
 map("i", "<c-q>", "<C-K>", { desc = "" })
 
 -- VISUAL MODE REMAPS
-map("v", "<c-y>", '"+y', { desc = "yank selection to system clipboard" })
+map("v", "<c-c>", '"+y', { desc = "yank selection to system clipboard" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "move select block up" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "move select block down" })
 map("v", "m", "%", { desc = "move cursor to paired bracket" })

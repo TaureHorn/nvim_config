@@ -76,7 +76,8 @@ return {
                 ['<CR>'] = { 'accept', 'fallback' },
                 ['<c-g>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
                 ['<c-i>'] = { 'hide_signature', 'show_signature', 'fallback' },
-                ['<c-k>'] = {} -- unbind c-k that toggles signature
+                ['<c-k>'] = {}, -- unbind c-k that toggles signature
+                ['<Tab>'] = {}, -- unbind Tab
             },
             signature = {
                 enabled = true,
@@ -102,5 +103,9 @@ return {
             })
         end
     },
+
+    {
+        'ron-rs/ron.vim'
+    }
 
 }

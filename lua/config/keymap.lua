@@ -14,6 +14,8 @@ map("n", "N", "Nzzzv", { desc = "keep cursor in middle when moving through searc
 map("n", "<leader>y", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "rename word under cursor" })
 map("n", "<leader>'", "bi'<Esc>ea'<Esc>", { desc = "wrap word under cursor in '' " })
 map("n", ",", "za", { desc = "toggle fold" })
+map("n", "vP", "vapk", { desc = "select paragraph" })
+
 
 map("n", "<leader>ff", vim.lsp.buf.format, { desc = "format buffer" })
 map("n", "gn", vim.diagnostic.goto_next, { desc = "jump to next diagnostic message" })
@@ -46,11 +48,14 @@ map('n', '<leader>c', ":lua require('neoclip.fzf')()<CR>")
 map('n', '<leader>fd', ":FzfLua diagnostics_workspace<CR>")
 
 -- INSERT MODE REMAPS
-map("i", "<C-H>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
+-- 
+map("i", "<c-BS>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
 map("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
 map("i", "<c-k>", "()<Esc>i", { desc = "shorcut for a pair of parentheses" })
 map("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" })
+map("i", "<Tab>", "<Tab>", { desc = "ensure Tab works" }) -- blink.cmp issue suggestion
 map("i", "<c-q>", "<C-K>", { desc = "" })
+
 
 -- VISUAL MODE REMAPS
 map("v", "<c-c>", '"+y', { desc = "yank selection to system clipboard" })

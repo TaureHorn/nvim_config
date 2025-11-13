@@ -53,9 +53,7 @@ map("i", "<c-BS>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
 map("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
 map("i", "<c-k>", "()<Esc>i", { desc = "shorcut for a pair of parentheses" })
 map("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" })
-map("i", "<Tab>", "<Tab>", { desc = "ensure Tab works" }) -- blink.cmp issue suggestion
 map("i", "<c-q>", "<C-K>", { desc = "" })
-
 
 -- VISUAL MODE REMAPS
 map("v", "<c-c>", '"+y', { desc = "yank selection to system clipboard" })

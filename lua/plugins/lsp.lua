@@ -13,6 +13,7 @@ return {
                 gopls = {},
                 jsonls = {},
                 lua_ls = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
+                pylsp = {},
                 ts_ls = {},
             },
         },

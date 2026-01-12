@@ -174,11 +174,18 @@ return {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {
+            keywords = {
+                NO = { alt = { "ERROR", "FAIL" }, color = "warning", icon = "" },
+                YES = { alt = { "GOOD", "PASS" }, color = "yes", icon = "" },
+                LEARN = { alt = { "WHAT" }, color = "misc", icon = "" }
+            },
             colors = {
                 error = { CP_Palette.orange },
                 hint = { CP_Palette.purple },
                 info = { CP_Palette.yellow },
+                misc = { CP_Palette.blue },
                 warning = { CP_Palette.red },
+                yes = { CP_Palette.green }
             }
         }
     },

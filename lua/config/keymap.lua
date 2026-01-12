@@ -61,7 +61,7 @@ map("v", "J", ":m '>+1<CR>gv=gv", { desc = "move select block up" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "move select block down" })
 map("v", "m", "%", { desc = "move cursor to paired bracket" })
 map("v", "H", "^", { desc = "move cursor to beginning of line" })
-map("v", "L", "$", { desc = "move cursor to end of line" })
+map("v", "L", "$h", { desc = "move cursor to end of line" })
 map("v", "<c-j>", "}", { desc = "move down by paragraph" })
 map("v", "<c-k>", "{", { desc = "move up by paragraph" })
 

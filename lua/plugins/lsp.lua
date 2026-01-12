@@ -15,6 +15,7 @@ return {
                 lua_ls = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
                 pylsp = {},
                 ts_ls = {},
+                yamlls = {}
             },
         },
         config = function(_, opts)
@@ -75,7 +76,7 @@ return {
                 ['<Left>'] = { 'hide', 'fallback' },
                 ['<Right>'] = { 'accept', 'fallback' },
                 ['<CR>'] = { 'accept', 'fallback' },
-                ['<c-g>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
+                ['<c-g>'] = { 'hide_documentation', 'show_documentation', 'fallback' },
                 ['<c-n>'] = { 'hide_signature', 'show_signature', 'fallback' },
                 ['<c-k>'] = {}, -- unbind c-k that toggles signature
             },

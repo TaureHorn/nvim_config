@@ -51,15 +51,16 @@ vim.api.nvim_create_autocmd("WinEnter", {
 })
 
 -- adds register l to take visual selection and add a print statement base of the filetype
-local print_visual_selection = vim.api.nvim_create_augroup("PrintVisualSelection", { clear = true })
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
 local filetypePrintSequence = {
-    javascript  =   'vawyoconsole.log("' .. esc .. 'pi", ' .. esc .. 'pxi)' .. esc .. 'lx',
-    lua         =   'vawyoprint("' .. esc .. 'pi", ' .. esc .. 'pxi)' .. esc .. 'lx',
-    python      =   'vawyoprint("' .. esc .. 'pi", ' .. esc .. 'pxi)' .. esc .. 'lx',
-    sh          =   'vawyoecho "' .. esc .. 'pi $' .. esc .. 'pxi"' .. esc .. 'lx'
+    javascript  =   'viwyoconsole.log("' .. esc .. 'pa", ' .. esc .. 'pa)' .. esc,
+    go          =   'viwyofmt.Println("' .. esc .. 'pa", ' .. esc .. 'pa)' .. esc,
+    lua         =   'viwyoprint("' .. esc .. 'pa", ' .. esc .. 'pa)' .. esc,
+    python      =   'viwyoprint("' .. esc .. 'pa", ' .. esc .. 'pa)' .. esc,
+    sh          =   'viwyoecho "' .. esc .. 'pa $' .. esc .. 'pa"' .. esc
 }
 
+local print_visual_selection = vim.api.nvim_create_augroup("PrintVisualSelection", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", {
     group = print_visual_selection,
     desc = "set register to print visual selection based on filetype",

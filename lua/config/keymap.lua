@@ -23,8 +23,6 @@ map("n", "gp", vim.diagnostic.goto_prev, { desc = "jump to prev diagnostic messa
 
 map("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "toggle nvim-tree window" })
 
-map("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
-
 -- Window/split navigation
 map("n", "<leader><CR>", vim.cmd.vsp, { desc = "vertical split" })
 map("n", "<leader><Esc>", vim.cmd.sp, { desc = "split" })
@@ -50,7 +48,7 @@ map('n', '<leader>fd', ":FzfLua diagnostics_workspace<CR>")
 -- INSERT MODE REMAPS
 -- 
 map("i", "<c-BS>", "<Esc>caw", { desc = "CTRL Backspace deletes whole words" })
-map("i", "<c-j>", "{<CR>}<Esc>O", { desc = "shorcut for a pair of curly brackets" })
+map("i", "<c-j>", "{}<Esc>i", { desc = "shorcut for a pair of curly brackets" })
 map("i", "<c-k>", "()<Esc>i", { desc = "shorcut for a pair of parentheses" })
 map("i", "<c-l>", "[]<Esc>i", { desc = "shorcut for a pair of square brackets" })
 map("i", "<c-q>", "<C-K>", { desc = "" })

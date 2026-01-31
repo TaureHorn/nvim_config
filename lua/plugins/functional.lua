@@ -45,11 +45,15 @@ return {
             map("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Toggle harpoon buffer list" })
             map("n", "<C-e>", function() fzf_harpoon(harpoon:list()) end, { desc = "Open fzf-lua harpoon window" })
 
-            map("n", "<leader>q", function() harpoon:list():select(1) end, { desc = "open harpoon buffer 1" })
-            map("n", "<leader>w", function() harpoon:list():select(2) end, { desc = "open harpoon buffer 2" })
-            map("n", "<leader>e", function() harpoon:list():select(3) end, { desc = "open harpoon buffer 3" })
-            map("n", "<leader>r", function() harpoon:list():select(4) end, { desc = "open harpoon buffer 4" })
-            map("n", "<leader>t", function() harpoon:list():select(5) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>m", function() harpoon:list():select(1) end, { desc = "open harpoon buffer 1" })
+            map("n", "<leader>,", function() harpoon:list():select(2) end, { desc = "open harpoon buffer 2" })
+            map("n", "<leader>.", function() harpoon:list():select(3) end, { desc = "open harpoon buffer 3" })
+            map("n", "<leader>j", function() harpoon:list():select(4) end, { desc = "open harpoon buffer 4" })
+            map("n", "<leader>k", function() harpoon:list():select(5) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>l", function() harpoon:list():select(6) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>u", function() harpoon:list():select(7) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>i", function() harpoon:list():select(8) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>o", function() harpoon:list():select(9) end, { desc = "open harpoon buffer 5" })
         end
     },
 

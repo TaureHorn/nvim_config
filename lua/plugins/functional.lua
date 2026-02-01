@@ -1,10 +1,31 @@
+
+Autosave_Allowed_Directories = {
+    "~/.bashrc.d",
+    "~/.config",
+    "~/.local",
+    "~/bin",
+    "/mnt/malsheem/0_PHYLACTERY/",
+    "/mnt/malsheem/2_DOCUMENTS/",
+}
+
 return {
     -- auto-saves editor sessions
     {
         'rmagatti/auto-session',
         config = function()
             require("auto-session").setup {
-                suppressed_dirs = { "~/", "~/Downloads", "/" },
+                auto_create = function()
+                    local autoSaveSession = false
+                    local cwd = vim.fn.getcwd(-1, -1)
+                    for _, path in pairs(Autosave_Allowed_Directories) do
+                        local matchedPath = string.match(cwd, vim.fn.expand(path))
+                        if type(matchedPath) == "string" then
+                            autoSaveSession = true
+                            break
+                        end
+                    end
+                    return autoSaveSession
+                end,
             }
         end
     },
@@ -28,7 +49,7 @@ return {
                 for _, item in ipairs(harpoon_files.items) do
                     table.insert(file_paths, item.value)
                 end
-                                local actions = require('fzf-lua').actions
+                local actions = require('fzf-lua').actions
                 require('fzf-lua').fzf_exec(file_paths, {
                     actions = {
                         ['enter'] = actions.file_edit_or_qf

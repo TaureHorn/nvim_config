@@ -71,10 +71,10 @@ return {
             map("n", "<leader>.", function() harpoon:list():select(3) end, { desc = "open harpoon buffer 3" })
             map("n", "<leader>j", function() harpoon:list():select(4) end, { desc = "open harpoon buffer 4" })
             map("n", "<leader>k", function() harpoon:list():select(5) end, { desc = "open harpoon buffer 5" })
-            map("n", "<leader>l", function() harpoon:list():select(6) end, { desc = "open harpoon buffer 5" })
-            map("n", "<leader>u", function() harpoon:list():select(7) end, { desc = "open harpoon buffer 5" })
-            map("n", "<leader>i", function() harpoon:list():select(8) end, { desc = "open harpoon buffer 5" })
-            map("n", "<leader>o", function() harpoon:list():select(9) end, { desc = "open harpoon buffer 5" })
+            map("n", "<leader>l", function() harpoon:list():select(6) end, { desc = "open harpoon buffer 6" })
+            map("n", "<leader>u", function() harpoon:list():select(7) end, { desc = "open harpoon buffer 7" })
+            map("n", "<leader>i", function() harpoon:list():select(8) end, { desc = "open harpoon buffer 8" })
+            map("n", "<leader>o", function() harpoon:list():select(9) end, { desc = "open harpoon buffer 9" })
         end
     },
 

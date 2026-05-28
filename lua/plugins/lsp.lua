@@ -19,8 +19,6 @@ return {
             },
         },
         config = function(_, opts)
-            local lspconfig = require('lspconfig')
-
             local handlers = {
                 ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
             }
@@ -31,7 +29,8 @@ return {
                 config.on_attach = function()
                     print(server .. ' >>> lsp server attached to buffer in file [' .. vim.fn.expand('%:t') .. ']')
                 end
-                lspconfig[server].setup(config)
+                vim.lsp.config[server] = config
+                vim.lsp.enable(server)
             end
         end
     },

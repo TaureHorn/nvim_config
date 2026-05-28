@@ -1,3 +1,4 @@
+vim.cmd("set shm+=I") -- removes splash screen
 vim.cmd("set guicursor=n-v-c-i:block")
 vim.cmd("set mouse=")
 vim.cmd("set termguicolors")

@@ -25,7 +25,7 @@ return {
                         end
                     end
                     return autoSaveSession
-                end,
+                end
             }
         end
     },
